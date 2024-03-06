@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Home"
+        android:icon="@drawable/home_icon"
+        android:id="@+id/search"
+        android:orderInCategory="100"
+        />
+
+    <!-- action button for refresh -->
+    <item android:title="Profile"
+        android:icon="@drawable/profile_icon"
+        android:id="@+id/refresh"
+        android:orderInCategory="100"
+      />
+
+</menu>

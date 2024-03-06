@@ -1,0 +1,18 @@
+<resources>
+    <!-- Base application theme -->
+<!--    <style name="AppTheme" parent="Theme.Food_Recipe">-->
+<!--        &lt;!&ndash; Customize your theme here &ndash;&gt;-->
+<!--<item name="android:textViewStyle">@style/CustomTextStyle</item>-->
+<!--        <item name="android:buttonStyle">@style/CustomButtonStyle</item>-->
+
+<!--    </style>-->
+
+    <!-- Define a custom text style -->
+    <style name="CustomTextStyle" >
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+    <style name="CustomButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <!-- Add other button attributes as needed -->
+    </style>
+</resources>
