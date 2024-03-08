@@ -1,26 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".RecipeDetail"
+    android:padding="20dp"
+    android:id="@+id/ll1"
     android:orientation="vertical"
     >
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Detail"
-    />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/open_url"
-        android:text="Watch Recipe in browser."
+        android:text="Back"
+        android:id="@+id/back"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"
         />
-    <WebView
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/webview"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:id="@+id/head"
+        android:textStyle="bold"
+        />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageView"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        />
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/open_url"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginVertical="10dp"-->
+<!--        android:text="Watch Recipe"-->
+<!--        />-->
+<!--    <WebView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/webview"-->
+<!--        />-->
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingredients"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:layout_marginBottom="10dp"
+        />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/sv"
+    />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nutrients"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:layout_marginBottom="10dp"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sv2"
         />
 </LinearLayout>
+</ScrollView>

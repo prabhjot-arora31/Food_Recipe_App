@@ -21,6 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
@@ -45,6 +46,8 @@ this.recipes = recipes;
             String imageUrl = recipe.getJSONObject("recipe").getString("image");
             JSONArray mealType = recipe.getJSONObject("recipe").getJSONArray("mealType");
             String url = recipe.getJSONObject("recipe").getString("url");
+            JSONArray ingredients = recipe.getJSONObject("recipe").getJSONArray("ingredients");
+            JSONObject nutrients = recipe.getJSONObject("recipe").getJSONObject("totalNutrients");
             holder.recipeName.setText(name);
             holder.mealType.setText(mealType.getString(0));
 
@@ -54,6 +57,15 @@ this.recipes = recipes;
                     if (context != null) {
                         Intent recipe_detail = new Intent(context, RecipeDetail.class);
                         recipe_detail.putExtra("url",url);
+                        recipe_detail.putExtra("name",name);
+                        recipe_detail.putExtra("imageUrl",imageUrl);
+                        recipe_detail.putExtra("ingredients",  ingredients.toString());
+                        recipe_detail.putExtra("nutrients",nutrients.toString());
+                        try {
+                            recipe_detail.putExtra("mealType",mealType.getString(0).toString());
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
                         context.startActivity(recipe_detail);
                     }else{
                         Log.d("ctx","Error");
