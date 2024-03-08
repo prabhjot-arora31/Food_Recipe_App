@@ -44,6 +44,7 @@ public class Search_Recipes extends AppCompatActivity {
         Intent abc =getIntent();
         String searchTerm = abc.getStringExtra("search_term");
         searchLabel = findViewById(R.id.searchLabel);
+
         searchLabel.setText(searchTerm);
         adapter = new RecipeAdapter(Search_Recipes.this,recipeList);
         recyclerView = findViewById(R.id.recyclerView);

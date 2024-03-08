@@ -41,32 +41,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="6dp"
             android:gravity="center"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:id="@+id/mealType"
                 android:padding="4dp"
                 style="@style/CustomTextStyle"
                 android:background = "@drawable/tag"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:textSize="13dp"
                 android:textColor="#000000"
                 android:layout_marginRight="4.5dp"
                 />
             <Button
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/view_btn"
-                android:background="@color/red"
+                android:layout_gravity="center"
+                android:background="@drawable/view_btn"
                 android:textColor="#ffffff"
+                android:layout_marginTop="4.5dp"
                 android:text="View"
-                android:textSize="14.6dp"
-
+                android:textSize="13.5dp"
                 />
         </LinearLayout>
 

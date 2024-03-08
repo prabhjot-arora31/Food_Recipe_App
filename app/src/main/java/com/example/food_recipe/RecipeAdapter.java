@@ -48,8 +48,14 @@ this.recipes = recipes;
             String url = recipe.getJSONObject("recipe").getString("url");
             JSONArray ingredients = recipe.getJSONObject("recipe").getJSONArray("ingredients");
             JSONObject nutrients = recipe.getJSONObject("recipe").getJSONObject("totalNutrients");
-            holder.recipeName.setText(name);
+            if(name.length() >= 14){
+                holder.recipeName.setText(name.substring(0,14)+"...");
+            }else{
+                holder.recipeName.setText(name);
+            }
             holder.mealType.setText(mealType.getString(0));
+            holder.view_btn.setBackgroundColor(Color.RED);
+            holder.view_btn.setTextColor(Color.WHITE);
 
             holder.view_btn.setOnClickListener(new View.OnClickListener() {
                 @Override

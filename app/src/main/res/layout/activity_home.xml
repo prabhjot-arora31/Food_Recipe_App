@@ -107,6 +107,7 @@
                   android:layout_height="wrap_content"
                   android:text="Sweets"
                   android:textStyle="bold"
+                  android:fontFamily="sans-serif-condensed"
                   android:textSize="20dp"
                   android:gravity="center"
                   />
@@ -130,6 +131,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="Spicy"
+                  android:fontFamily="sans-serif-condensed"
                   android:textStyle="bold"
                   android:textSize="20dp"
                   android:gravity="center"

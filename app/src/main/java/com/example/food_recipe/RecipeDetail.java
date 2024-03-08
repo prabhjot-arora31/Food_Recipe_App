@@ -1,6 +1,7 @@
 package com.example.food_recipe;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -8,10 +9,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.lang.reflect.Type;
 import java.util.Iterator;
 
 public class RecipeDetail extends AppCompatActivity {
@@ -22,6 +27,12 @@ public class RecipeDetail extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_detail);
         findViewById(R.id.back).setOnClickListener(e->{
             finish();
+        });
+        findViewById(R.id.web).setOnClickListener(e->{
+            Toast.makeText(getApplicationContext(),"Yo",Toast.LENGTH_LONG).show();
+            Intent i = new Intent(this, WebsiteView.class);
+            i.putExtra("url",getIntent().getStringExtra("url"));
+            startActivity(i);
         });
         // Getting data from the intent
         Intent detail = getIntent();
@@ -61,6 +72,7 @@ public class RecipeDetail extends AppCompatActivity {
                 JSONObject ingredientObject = ingredientsArray.getJSONObject(i);
                 LinearLayout ll2 = new LinearLayout(this);
                 ImageView im = new ImageView(this);
+                im.setLayoutParams(new LinearLayout.LayoutParams(250,250));
                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                        ViewGroup.LayoutParams.MATCH_PARENT,
                        ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -71,7 +83,8 @@ public class RecipeDetail extends AppCompatActivity {
                 TextView t = new TextView(this);
                 t.setLayoutParams(new LinearLayout.LayoutParams(
                         565, ViewGroup.LayoutParams.WRAP_CONTENT));
-                t.setTextSize(20.5f);
+                t.setTextSize(17.5f);
+                t.setTypeface(Typeface.SANS_SERIF);
                 Picasso.get().load(ingredientObject.getString("image")).into(im);
                 String text = i + 1 + ": " + ingredientObject.getString("text") + " [" +
                         ingredientObject.getString("quantity") + " " +
@@ -101,7 +114,8 @@ public class RecipeDetail extends AppCompatActivity {
                 double quantity = nutrient.getDouble("quantity");
                 String unit = nutrient.getString("unit");
                 TextView t2 = new TextView(this);
-                t2.setTextSize(20.5f);
+                t2.setTextSize(17.5f);
+                t2.setTypeface(Typeface.SANS_SERIF);
                 t2.setText(i+". "+label + " = " + quantity + " " + unit);
                 ml2.addView(t2);
             } catch (JSONException e) {
