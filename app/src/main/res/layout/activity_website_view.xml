@@ -6,14 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
   tools:context=".WebsiteView"
-    android:padding="20dp"
     >
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
+        android:layout_marginLeft="20dp"
         android:id="@+id/back"
         android:textSize="20dp"
+        android:fontFamily="@font/opensansmedium"
         android:layout_marginBottom="20dp"
         />
 <WebView

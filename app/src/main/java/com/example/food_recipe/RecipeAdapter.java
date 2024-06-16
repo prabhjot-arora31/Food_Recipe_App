@@ -54,7 +54,8 @@ this.recipes = recipes;
                 holder.recipeName.setText(name);
             }
             holder.mealType.setText(mealType.getString(0));
-            holder.view_btn.setBackgroundColor(Color.RED);
+           // holder.view_btn.setBackgroundColor(Color.RED);
+            holder.view_btn.setBackgroundColor(Color.parseColor("#FF0000"));
             holder.view_btn.setTextColor(Color.WHITE);
 
             holder.view_btn.setOnClickListener(new View.OnClickListener() {

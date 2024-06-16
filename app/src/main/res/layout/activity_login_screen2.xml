@@ -15,7 +15,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Food Recipe"
+        android:text="Feast Flavours"
+        android:fontFamily="@font/opensansmedium"
         android:textStyle="bold"
         android:textSize="30dp"
         android:textColor="@color/white"
@@ -36,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:fontFamily="@font/opensansmedium"
             android:text="Login"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -54,11 +56,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email"
+                android:fontFamily="@font/opensansmedium"
                 android:textSize="17dp"
                 android:layout_marginRight="20dp"
                 />
             <EditText
                 android:id="@+id/ed1"
+                android:fontFamily="@font/opensansmedium"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
@@ -77,14 +81,16 @@
                 android:id="@+id/passwordLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/opensansmedium"
                 android:text="Password"
                 android:textSize="17dp"
                 android:layout_marginRight="10dp"
                 />
             <EditText
                 android:id="@+id/ed2"
-                android:layout_width="240dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/opensansmedium"
                 android:textSize="17dp"
                 />
         </LinearLayout>
@@ -101,6 +107,7 @@
                 android:layout_height="wrap_content"
                 android:text="Login"
                 android:id="@+id/loginBtn"
+                android:fontFamily="@font/opensansmedium"
                 android:textStyle="bold"
                 style="@style/CustomButtonStyle"
                 android:textSize="20dp"
@@ -121,6 +128,7 @@
                 android:layout_height="wrap_content"
                 android:text="-------------------------"
                 android:gravity="center"
+                android:fontFamily="@font/opensansmedium"
                 android:textStyle="normal"
                 />
         </LinearLayout>
@@ -137,11 +145,13 @@
                 android:layout_height="wrap_content"
                 android:text="Don't have an account?"
                 android:textSize="17dp"
+                android:fontFamily="@font/opensansmedium"
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/CustomButtonStyle"
+                android:fontFamily="@font/opensansmedium"
                 android:text="Register"
                 android:id="@+id/registerBtn"
                 android:textStyle="bold"

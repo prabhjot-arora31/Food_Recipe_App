@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_height="match_parent"
+    tools:context=".PrivacyPolicy">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Privacy Policy"
+        android:gravity="center"
+        android:textSize="25dp"
+            android:fontFamily="@font/opensansmedium"
+        />
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Privacy Policy"
+        android:fontFamily="@font/opensansmedium"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pp"
+        android:textStyle="normal"
+        android:fontFamily="@font/opensansmedium"
+        android:textSize="18dp"
+        />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensansmedium"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        android:text="Information We Collect"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info"
+        android:fontFamily="@font/opensansmedium"
+        android:textSize="18dp"
+        />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensansmedium"
+            android:text="Use of Your Information"
+            android:textStyle="bold"
+            android:textSize="21dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/use"
+            android:fontFamily="@font/opensansmedium"
+            android:textSize="18dp"
+            />
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="21dp"
+                android:fontFamily="@font/opensansmedium"
+                android:text="Disclosure of Your Information"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensansmedium"
+                android:id="@+id/dis"
+                android:textSize="18dp"
+                />
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/opensansmedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold|italic"
+                android:textSize="19dp"
+                android:text="If you have any questions about our Privacy Policy , please contact us at foodrecipe31@gmail.com"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.food_recipe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,7 +45,7 @@ public class Search_Recipes extends AppCompatActivity {
         Intent abc =getIntent();
         String searchTerm = abc.getStringExtra("search_term");
         searchLabel = findViewById(R.id.searchLabel);
-
+        searchLabel.setTypeface(ResourcesCompat.getFont(getApplicationContext(),R.font.opensansmedium));
         searchLabel.setText(searchTerm);
         adapter = new RecipeAdapter(Search_Recipes.this,recipeList);
         recyclerView = findViewById(R.id.recyclerView);
@@ -62,14 +63,24 @@ public class Search_Recipes extends AppCompatActivity {
                     public void onResponse(JSONArray response) {
                         loader.setVisibility(View.GONE);
                         try {
-                            for (int i = 0; i < response.length(); i++) {
-                                JSONObject jsonObject = response.getJSONObject(i);
-                                recipeList.add(jsonObject);
+                            if(response.length() > 1) {
+                                for (int i = 0; i < response.length(); i++) {
+                                    JSONObject jsonObject = response.getJSONObject(i);
+                                    recipeList.add(jsonObject);
+                                }
+                                adapter.notifyDataSetChanged();
+                                // Notify adapter of data change
                             }
-                            adapter.notifyDataSetChanged(); // Notify adapter of data change
+                            else{
+                                startActivity(new Intent(getApplicationContext(),ErrorPage.class));
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Toast.makeText(getApplicationContext(), "Error parsing JSON", Toast.LENGTH_SHORT).show();
+                        }
+                        catch(Exception e){
+                            Toast.makeText(getApplicationContext(),"Something wrong",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),ErrorPage.class));
                         }
                     }
                 },
@@ -78,6 +89,7 @@ public class Search_Recipes extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
 //                        loader.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(), "Error fetching data", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),ErrorPage.class));
                     }
                 }
         )

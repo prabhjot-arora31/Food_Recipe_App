@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- recipe_item.xml -->
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     >
 <LinearLayout
     android:layout_width="match_parent"
@@ -36,6 +37,7 @@
             android:textSize="20dp"
             android:textColor="#000000"
             android:textStyle="bold"
+            android:fontFamily="@font/opensansmedium"
             android:gravity="center" /> <!-- Center the text horizontally -->
 
         <LinearLayout
@@ -50,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/mealType"
                 android:padding="4dp"
+                android:fontFamily="@font/opensansmedium"
                 style="@style/CustomTextStyle"
                 android:background = "@drawable/tag"
                 android:gravity="center"
@@ -58,20 +61,24 @@
                 android:layout_marginRight="4.5dp"
                 />
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="95dp"
+                android:layout_height="40dp"
                 android:id="@+id/view_btn"
-                android:layout_gravity="center"
-                android:background="@drawable/view_btn"
                 android:textColor="#ffffff"
                 android:layout_marginTop="4.5dp"
+                android:fontFamily="@font/opensansmedium"
                 android:text="View"
-                android:textSize="13.5dp"
+                android:textStyle="bold"
+                android:textSize="14.5dp"
                 />
         </LinearLayout>
 
     </LinearLayout>
 
 </LinearLayout>
-
-</RelativeLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#000000"
+    />
+</LinearLayout>

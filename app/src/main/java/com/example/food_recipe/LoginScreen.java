@@ -46,6 +46,7 @@ public class LoginScreen extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("user_name",user.getName());
                     editor.putString("email",email1);
+                    editor.putString("phone",user.getPhone());
                     editor.putLong("expiry",System.currentTimeMillis()+5*24*60*60*1000);
                     editor.apply();
                     Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_SHORT).show();
@@ -71,7 +72,8 @@ public class LoginScreen extends AppCompatActivity {
         String[] projection = {
                 UserContract.UserEntry.user_email,
                 UserContract.UserEntry.user_password,
-                UserContract.UserEntry.user_name
+                UserContract.UserEntry.user_name,
+                UserContract.UserEntry.user_phone
         };
 
         // Filter results WHERE "email" = email
@@ -94,8 +96,10 @@ public class LoginScreen extends AppCompatActivity {
             String useremail = cursor.getString(cursor.getColumnIndexOrThrow(UserContract.UserEntry.user_email));
             String password = cursor.getString(cursor.getColumnIndexOrThrow(UserContract.UserEntry.user_password));
             String name = cursor.getString(cursor.getColumnIndexOrThrow(UserContract.UserEntry.user_name));
+            String phone = cursor.getString(cursor.getColumnIndexOrThrow(UserContract.UserEntry.user_phone));
             user = new User(useremail, password);
             user.setName(name);
+            user.setPhone(phone);
             cursor.close();
         }
 

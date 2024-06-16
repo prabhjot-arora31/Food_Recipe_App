@@ -4,6 +4,7 @@ public class User {
     private String email;
     private String password;
     private String name;
+    private String phone;
 
     public User(String email, String password) {
         this.email = email;
@@ -22,4 +23,6 @@ public class User {
     public String getPassword() {
         return password;
     }
+    public  String getPhone() { return phone; }
+    public void setPhone(String phone1) { this.phone = phone1; }
 }

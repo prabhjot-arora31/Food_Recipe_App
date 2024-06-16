@@ -11,7 +11,7 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:id="@+id/toolbar"
-    app:title="iFoodRecipe"
+    app:title="Feast Flavours"
     />
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,8 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
+            android:fontFamily="@font/opensansmedium"
             android:id="@+id/welcomeText"
-            android:textStyle="bold"
             android:textSize="30dp"
             android:text="Welcome User"
             android:layout_marginBottom="20dp"
@@ -43,6 +43,8 @@
                 android:hint="Search Recipes..."
                 android:textSize="20sp"
                 android:maxLines="1"
+                android:fontFamily="@font/opensansmedium"
+                android:singleLine="true"
                 android:id="@+id/searchBox"
                 android:drawableLeft="@drawable/search_icon"
                 android:background="@drawable/search_input"
@@ -54,116 +56,304 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/searchBtn"
+                android:fontFamily="@font/opensansmedium"
                 android:layout_weight="1"
                 android:text="Search"
                 android:textStyle="bold"
                 android:textSize="20sp" />
         </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/logoutSection"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
         >
-
-    </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Categories"
             android:textStyle="bold"
-            android:textSize="20dp"
-            android:layout_marginTop="30dp"
+            android:fontFamily="@font/opensansmedium"
+            android:textSize="19dp"
+            android:layout_marginTop="20dp"
             />
-      <HorizontalScrollView
-          android:id="@+id/hsv"
-          android:layout_marginTop="10dp"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          >
-          <LinearLayout
-              android:orientation="horizontal"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              >
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:layout_marginRight="10dp"
-              >
-    <ImageButton
-        android:layout_width="140dp"
-        android:maxWidth="140dp"
-        android:maxHeight="140dp"
-        android:layout_height="140dp"
-        android:scaleType="centerInside"
-        android:background="@drawable/categories_layout"
-        android:id="@+id/ib1"
-        />
-              <TextView
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="Sweets"
-                  android:textStyle="bold"
-                  android:fontFamily="sans-serif-condensed"
-                  android:textSize="20dp"
-                  android:gravity="center"
-                  />
-          </LinearLayout>
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:layout_marginRight="10dp"
-              >
-              <ImageButton
-                  android:layout_width="140dp"
-                  android:maxWidth="140dp"
-                  android:maxHeight="140dp"
-                  android:layout_height="140dp"
-                  android:scaleType="centerInside"
-                  android:background="@drawable/categories_layout"
-                  android:id="@+id/spicy"
-                  />
-              <TextView
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="Spicy"
-                  android:fontFamily="sans-serif-condensed"
-                  android:textStyle="bold"
-                  android:textSize="20dp"
-                  android:gravity="center"
-                  />
-          </LinearLayout>
-              <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="vertical"
-                  android:layout_marginRight="10dp"
-                  >
-                  <ImageButton
-                      android:layout_width="140dp"
-                      android:maxWidth="140dp"
-                      android:maxHeight="140dp"
-                      android:layout_height="140dp"
-                      android:scaleType="centerInside"
-                      android:background="@drawable/categories_layout"
-                      android:id="@+id/chicken"
-                      />
-                  <TextView
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:fontFamily="sans-serif-condensed"
-                      android:text="Chicken"
-                      android:textStyle="bold"
-                      android:textSize="20dp"
-                      android:gravity="center"
-                      />
-              </LinearLayout>
-          </LinearLayout>
-      </HorizontalScrollView>
+        <HorizontalScrollView
+            android:id="@+id/hsv2"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:maxWidth="100dp"
+                        android:maxHeight="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/categories_layout"
+                        android:id="@+id/northindian"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:text="North\nIndian"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/opensansmedium"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:maxWidth="100dp"
+                        android:maxHeight="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/categories_layout"
+                        android:id="@+id/southindian"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="South\nIndian"
+                        android:fontFamily="@font/opensansmedium"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:maxWidth="100dp"
+                        android:maxHeight="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/categories_layout"
+                        android:id="@+id/french"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensansmedium"
+                        android:text="French"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <!--          second row-->
+        </HorizontalScrollView>
+        <HorizontalScrollView
+            android:id="@+id/hsv3"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:maxWidth="100dp"
+                        android:maxHeight="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/categories_layout"
+                        android:id="@+id/german"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="German"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/opensansmedium"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:maxWidth="100dp"
+                        android:maxHeight="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/categories_layout"
+                        android:id="@+id/italic"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Italic"
+                        android:fontFamily="@font/opensansmedium"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:maxWidth="100dp"
+                        android:maxHeight="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/categories_layout"
+                        android:id="@+id/japanese"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensansmedium"
+                        android:text="Japanese"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <!--          second row-->
+        </HorizontalScrollView>
+        <HorizontalScrollView
+            android:id="@+id/hsv"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:maxWidth="100dp"
+                        android:maxHeight="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/categories_layout"
+                        android:id="@+id/ib1"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sweets"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/opensansmedium"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:maxWidth="100dp"
+                        android:maxHeight="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/categories_layout"
+                        android:id="@+id/spicy"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Spicy"
+                        android:fontFamily="@font/opensansmedium"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    >
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:maxWidth="100dp"
+                        android:maxHeight="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/categories_layout"
+                        android:id="@+id/chicken"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensansmedium"
+                        android:text="Chicken"
+                        android:textStyle="bold"
+                        android:textSize="17dp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <!--          second row-->
+        </HorizontalScrollView>
+    </LinearLayout>
+</ScrollView>
+
     </LinearLayout>
 
 </LinearLayout>

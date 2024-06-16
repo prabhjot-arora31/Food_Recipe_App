@@ -1,10 +1,15 @@
 package com.example.food_recipe;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
+
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -17,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Type;
+import java.text.DecimalFormat;
 import java.util.Iterator;
 
 public class RecipeDetail extends AppCompatActivity {
@@ -28,8 +34,11 @@ public class RecipeDetail extends AppCompatActivity {
         findViewById(R.id.back).setOnClickListener(e->{
             finish();
         });
+        Button back = findViewById(R.id.back);
+        back.setBackgroundColor(Color.RED);
+        findViewById(R.id.web).setBackgroundColor(Color.RED);
         findViewById(R.id.web).setOnClickListener(e->{
-            Toast.makeText(getApplicationContext(),"Yo",Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(),"Yo",Toast.LENGTH_LONG).show();
             Intent i = new Intent(this, WebsiteView.class);
             i.putExtra("url",getIntent().getStringExtra("url"));
             startActivity(i);
@@ -76,15 +85,18 @@ public class RecipeDetail extends AppCompatActivity {
                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                        ViewGroup.LayoutParams.MATCH_PARENT,
                        ViewGroup.LayoutParams.WRAP_CONTENT);
-               params.setMargins(0,0,0,10);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    im.setForegroundGravity(Gravity.CENTER);
+                }
+                params.setMargins(0,0,0,10);
                ll2.setLayoutParams( params);
                 ll2.setOrientation(LinearLayout.HORIZONTAL);
                 ll2.setVerticalGravity(Gravity.CENTER_VERTICAL);
                 TextView t = new TextView(this);
+                t.setTypeface(ResourcesCompat.getFont( getApplicationContext(), R.font.opensansmedium));
                 t.setLayoutParams(new LinearLayout.LayoutParams(
                         565, ViewGroup.LayoutParams.WRAP_CONTENT));
                 t.setTextSize(17.5f);
-                t.setTypeface(Typeface.SANS_SERIF);
                 Picasso.get().load(ingredientObject.getString("image")).into(im);
                 String text = i + 1 + ": " + ingredientObject.getString("text") + " [" +
                         ingredientObject.getString("quantity") + " " +
@@ -104,20 +116,23 @@ public class RecipeDetail extends AppCompatActivity {
         LinearLayout ml2 = new LinearLayout(this);
         ml2.setOrientation(LinearLayout.VERTICAL);
         Iterator<String> nutrientKeys = nutrientsJson.keys();
-        int i=0;
+        int i=1;
         while (nutrientKeys.hasNext()) {
-            i++;
+
             String key = nutrientKeys.next();
             try {
                 JSONObject nutrient = nutrientsJson.getJSONObject(key);
                 String label = nutrient.getString("label");
                 double quantity = nutrient.getDouble("quantity");
                 String unit = nutrient.getString("unit");
-                TextView t2 = new TextView(this);
-                t2.setTextSize(17.5f);
-                t2.setTypeface(Typeface.SANS_SERIF);
-                t2.setText(i+". "+label + " = " + quantity + " " + unit);
-                ml2.addView(t2);
+                if(label.equals("Energy") || label.equals("Fat") || label.equals("Carbohydrates (net)") || label.equals("Fiber") || label.equals("Sugars") || label.equals("Protein") || label.equals("Vitamin A") || label.equals("Water")) {
+                    TextView t2 = new TextView(this);
+                    t2.setTextSize(17.5f);
+                    t2.setTypeface(ResourcesCompat.getFont( getApplicationContext(), R.font.opensansmedium));
+                    t2.setText(i + ". " + label + " = " + new DecimalFormat("0.00").format(quantity) + " " + unit);
+                    ml2.addView(t2);
+                    i++;
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }

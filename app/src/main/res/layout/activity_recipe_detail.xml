@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RecipeDetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -20,6 +21,7 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:id="@+id/back"
+        android:fontFamily="@font/opensansmedium"
         android:textSize="20dp"
         android:layout_marginBottom="20dp"
         />
@@ -29,6 +31,7 @@
         android:textAlignment="center"
         android:textSize="20dp"
         android:id="@+id/head"
+        android:fontFamily="@font/opensansmedium"
         android:textStyle="bold"
         />
     <ImageView
@@ -51,12 +54,20 @@
 <!--        android:layout_height="match_parent"-->
 <!--        android:id="@+id/webview"-->
 <!--        />-->
+<LinearLayout
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/black"
+    />
     <TextView
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingredients"
         android:textSize="20dp"
+        android:fontFamily="@font/opensansmedium"
         android:textStyle="bold"
         android:textAlignment="textStart"
         android:layout_marginBottom="10dp"
@@ -66,30 +77,39 @@
     android:layout_height="wrap_content"
     android:id="@+id/sv"
     />
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        />
     <TextView
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nutrients"
         android:textSize="20dp"
+        android:fontFamily="@font/opensansmedium"
         android:textStyle="bold"
         android:textAlignment="textStart"
         android:layout_marginBottom="10dp"
         />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sv2"
         />
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Watch Recipe"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
         android:id="@+id/web"
-        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:layout_marginTop="14.5dp"
+        android:fontFamily="@font/opensansmedium"
+        android:text="See Recipe"
+        android:textSize="16.5dp"
         />
 </LinearLayout>
 </ScrollView>
