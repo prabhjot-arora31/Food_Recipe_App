@@ -350,8 +350,9 @@ public class Home extends AppCompatActivity {
             chicken.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent chicken = new Intent(getApplicationContext(), ChickenView.class);
-                    startActivity(chicken);
+                    Intent searchActivity = new Intent(getApplicationContext(), Search_Recipes.class);
+                    searchActivity.putExtra("search_term", "chicken");
+                    startActivity(searchActivity);
                 }
             });
         }

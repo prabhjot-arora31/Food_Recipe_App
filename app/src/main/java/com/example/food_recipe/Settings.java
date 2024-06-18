@@ -35,11 +35,13 @@ public class Settings extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences historyPreferences = getSharedPreferences("history",Context.MODE_PRIVATE);
                 SharedPreferences sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.remove("email");
                 editor.remove("expiry");
                 editor.apply();
+                historyPreferences.edit().clear().apply();
                 startActivity(new Intent(getApplicationContext(),LoginScreen.class));
                 finish();
             }
